@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"target": "ES2023",
+		"strict": true,
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"lib": ["ESNext", "Decorators", "DOM"],
+		"resolveJsonModule": true,
+		"outDir": "../dist",
+		"rootDir": ".",
+		"declaration": true,
+		"skipLibCheck": true
+	},
+	"include": ["**/*.ts"],
+	"exclude": ["components"]
+}

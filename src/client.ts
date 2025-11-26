@@ -1,0 +1,26 @@
+import './common.js';
+import type { Theme } from './common.js';
+
+export const themeStyles: Record<Theme, string> = Object.assign(Object.create(null), {
+	light: `
+	--fg-light: 10%;
+	--bg-light: 70%;
+	--light-step: -6%;
+	`,
+	forest: `
+	--hue: 150;
+	--fg-light: 75%;
+	--bg-light: 20%;
+	`,
+	midnight: `
+	--fg-light: 60%;
+	--bg-light: 2.5%;
+	--light-step: 2.5%;
+	`,
+	beach: `
+	--hue: 50;
+	--fg-light: 30%;
+	--bg-light: 60%;
+	--light-step: -4%;
+	`,
+});

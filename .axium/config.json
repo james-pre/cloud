@@ -1,0 +1,23 @@
+{
+	"show_duplicate_state": true,
+	"plugins": ["@axium/storage", "@axium/notes", "@axium/tasks"],
+	"storage": {
+		"enabled": true,
+		"cas": {
+			"enabled": true
+		},
+		"limits": {
+			"item_size": 0,
+			"user_items": 0,
+			"user_size": 0
+		},
+		"trash_duration": 30,
+		"data": "/srv/axium/storage"
+	},
+	"log": {
+		"level": "debug"
+	},
+	"web": {
+		"build": "../build/handler.js"
+	}
+}
