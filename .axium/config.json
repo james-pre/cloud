@@ -24,6 +24,7 @@
 		"trash_duration": 30
 	},
 	"web": {
-		"build": "../build/handler.js"
+		"build": "../build/handler.js",
+		"port": 1123
 	}
 }

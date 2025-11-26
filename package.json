@@ -13,7 +13,7 @@
 	"dependencies": {
 		"@axium/client": "^0.7.0",
 		"@axium/notes": "^0.1.11",
-		"@axium/server": "^0.26.2",
+		"@axium/server": "^0.26.3",
 		"@axium/storage": "^0.9.0",
 		"@axium/tasks": "^0.2.4"
 	},
