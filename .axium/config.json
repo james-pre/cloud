@@ -1,21 +1,27 @@
 {
-	"show_duplicate_state": true,
+	"$schema": "https://github.com/james-pre/axium/releases/download/server@0.26.2/schema.json",
+	"auth": {
+		"origin": "https://cloud.jamespre.dev",
+		"rp_id": "cloud.jamespre.dev",
+		"rp_name": "J'Cloud"
+	},
+	"log": {
+		"level": "debug"
+	},
 	"plugins": ["@axium/storage", "@axium/notes", "@axium/tasks"],
+	"show_duplicate_state": true,
 	"storage": {
-		"enabled": true,
 		"cas": {
 			"enabled": true
 		},
+		"data": "/srv/axium/storage",
+		"enabled": true,
 		"limits": {
 			"item_size": 0,
 			"user_items": 0,
 			"user_size": 0
 		},
-		"trash_duration": 30,
-		"data": "/srv/axium/storage"
-	},
-	"log": {
-		"level": "debug"
+		"trash_duration": 30
 	},
 	"web": {
 		"build": "../build/handler.js"
