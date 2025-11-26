@@ -25,6 +25,7 @@
 	},
 	"web": {
 		"build": "../build/handler.js",
-		"port": 1123
+		"port": 1123,
+		"secure": true
 	}
 }
