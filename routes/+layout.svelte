@@ -39,8 +39,8 @@
 
 		:global(div[popover]:popover-open) {
 			position: fixed;
-			right: 1em;
-			top: 3em;
+			right: anchor(right);
+			top: calc(anchor(bottom) + 1em);
 			width: fit-content;
 			height: fit-content;
 			cursor: default;

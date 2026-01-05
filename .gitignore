@@ -1,5 +1,4 @@
 .*
-!.axium
 !.gitignore
 node_modules
 build
