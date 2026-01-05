@@ -1,0 +1,33 @@
+#!/bin/bash
+
+script_dir="$(dirname "${BASH_SOURCE[0]}")"
+root="$(realpath "$script_dir")"
+
+packages=("client" "core" "notes" "server" "storage" "tasks")
+
+
+sub="${1:-help}"
+
+case "$sub" in
+	"local")
+		dir="${2:?Directory required}"
+		npm install ${packages[@]/#/$dir}
+		;;
+	"latest")
+		pkgs=("${packages[@]/#/@axium/}")
+		npm install "${pkgs[@]/%/@latest}"
+		;;
+	"help" | *)
+		cat << EOF
+Usage: $0 <command>
+
+Commands:
+    local <directory>  Install Axium packages from a local directory
+    latest             Install the latest versions of Axium packages
+    help                       Show this help message
+EOF
+		if [ "$sub" != "help" ]; then
+			exit 1
+		fi
+		;;
+esac 
