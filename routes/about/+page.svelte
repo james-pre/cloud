@@ -18,13 +18,13 @@
 		{#await fetchAPI('GET', 'metadata')}
 			<pre>Loading...</pre>
 		{:then metadata}
-			<pre>@axium/server v{metadata.version}</pre>
+			<pre>@axium/server <span class="version">{metadata.version}</span></pre>
 
 			<h3>Plugins</h3>
 			<div class="plugins">
 				{#each Object.entries(metadata.plugins) as [name, version]}
 					<pre class="name">{name}</pre>
-					<pre>{version}</pre>
+					<span class="version">{version}</span>
 				{:else}
 					<i>No plugins installed.</i>
 				{/each}

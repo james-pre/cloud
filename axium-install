@@ -11,7 +11,7 @@ sub="${1:-help}"
 case "$sub" in
 	"local")
 		dir="${2:?Directory required}"
-		npm install ${packages[@]/#/$dir}
+		npm install ${packages[@]/#/$dir/}
 		;;
 	"latest")
 		pkgs=("${packages[@]/#/@axium/}")

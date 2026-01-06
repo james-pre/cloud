@@ -11,23 +11,32 @@
 		"serve": "axium serve"
 	},
 	"dependencies": {
-		"@axium/client": "^0.7.0",
-		"@axium/notes": "^0.1.11",
-		"@axium/server": "^0.26.3",
-		"@axium/storage": "^0.9.0",
-		"@axium/tasks": "^0.2.4"
+		"@axium/client": "^0.9.0",
+		"@axium/core": "^0.12.0",
+		"@axium/notes": "^0.2.0",
+		"@axium/server": "^0.28.2",
+		"@axium/storage": "^0.11.1",
+		"@axium/tasks": "^0.3.0",
+		"zod": "^4.3.5"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-node": "^5.4.0",
 		"vite-plugin-mkcert": "^1.17.9"
 	},
 	"prettier": {
-		"plugins": ["prettier-plugin-svelte"],
+		"plugins": [
+			"prettier-plugin-svelte"
+		],
 		"singleQuote": true,
 		"useTabs": true,
 		"trailingComma": "es5",
 		"tabWidth": 4,
 		"printWidth": 140,
 		"arrowParens": "avoid"
+	},
+	"axium": {
+		"server": {
+			"hooks": "./src/common.ts"
+		}
 	}
 }
