@@ -11,7 +11,7 @@
 		"serve": "axium serve"
 	},
 	"dependencies": {
-		"@axium/client": "^0.9.0",
+		"@axium/client": "^0.9.1",
 		"@axium/core": "^0.12.0",
 		"@axium/notes": "^0.2.0",
 		"@axium/server": "^0.28.2",
