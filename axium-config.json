@@ -1,5 +1,5 @@
 {
-	"$schema": "https://github.com/james-pre/axium/releases/download/server@0.26.2/schema.json",
+	"$schema": "./node_modules/@axium/server/schemas/config.json",
 	"auth": {
 		"origin": "https://cloud.jamespre.dev",
 		"rp_id": "cloud.jamespre.dev",
