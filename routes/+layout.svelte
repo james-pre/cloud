@@ -36,11 +36,13 @@
 		padding: 0.5em;
 		border: 1px solid var(--border-accent);
 		cursor: pointer;
+		background-color: var(--bg-alt);
 
 		:global(div[popover]:popover-open) {
 			position: fixed;
 			right: calc(anchor(right) - 1em);
 			top: calc(anchor(bottom) + 1em);
+			position-visibility: always;
 			width: fit-content;
 			height: fit-content;
 			cursor: default;
