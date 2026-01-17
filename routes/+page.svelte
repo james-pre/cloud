@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Version } from '@axium/client/components';
 	import { Severity, type AuditEvent } from '@axium/core/audit';
 
 	const { data } = $props();
@@ -20,17 +21,10 @@
 		</div>
 		<div class="box">
 			<h3>Version Info</h3>
-			{#each data.versionInfo as { name, version, latest }}
+			{#each data.outdatedPackages as { name, version: v, latest }}
 				<p>
 					{name}
-					<span class="version">{version}</span>
-					{#if latest}
-						{#if latest == version}
-							<span>(latest)</span>
-						{:else}
-							<span>(<span class="version">{latest}</span> available)</span>
-						{/if}
-					{/if}
+					<Version {v} {latest} />
 				</p>
 			{/each}
 		</div>
