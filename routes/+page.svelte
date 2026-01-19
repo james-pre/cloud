@@ -48,4 +48,14 @@
 		padding: 1em;
 		height: fit-content;
 	}
+
+	@media (width < 700px) {
+		#boxes {
+			inset: 5em 1em 1em;
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			align-content: center;
+		}
+	}
 </style>
