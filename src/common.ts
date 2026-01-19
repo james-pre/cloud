@@ -19,7 +19,7 @@ declare module '@axium/core/preferences' {
 
 addPreference({
 	name: 'theme',
-	schema: z.literal(Object.keys(themes) as Theme[]),
+	schema: z.enum(themes),
 	initial: 'default',
 	label: 'Theme',
 });
