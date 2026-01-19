@@ -20,12 +20,14 @@
 			</p>
 		</div>
 		<div class="box">
-			<h3>Version Info</h3>
+			<h3>Updates Needed</h3>
 			{#each data.outdatedPackages as { name, version: v, latest }}
 				<p>
 					{name}
 					<Version {v} {latest} />
 				</p>
+			{:else}
+				<p>All packages are up to date.</p>
 			{/each}
 		</div>
 	{/if}
