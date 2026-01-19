@@ -12,14 +12,14 @@ const themes = {
 export type Theme = (typeof themes)[keyof typeof themes];
 
 declare module '@axium/core/preferences' {
-	export interface PreferenceSchemas {
-		theme: z.ZodEnum<typeof themes>;
+	export interface Preferences {
+		theme: Theme;
 	}
 }
 
 addPreference({
 	name: 'theme',
-	schema: z.enum(themes),
+	schema: z.literal(Object.keys(themes) as Theme[]),
 	initial: 'default',
 	label: 'Theme',
 });
