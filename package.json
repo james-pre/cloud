@@ -11,10 +11,10 @@
 		"serve": "axium serve"
 	},
 	"dependencies": {
-		"@axium/client": "^0.9.12",
-		"@axium/core": "^0.15.0",
+		"@axium/client": "^0.10.0",
+		"@axium/core": "^0.16.0",
 		"@axium/notes": "^0.2.5",
-		"@axium/server": "^0.31.1",
+		"@axium/server": "^0.31.2",
 		"@axium/storage": "^0.12.0",
 		"@axium/tasks": "^0.3.5",
 		"semver": "^7.7.3",
