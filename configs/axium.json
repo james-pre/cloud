@@ -1,5 +1,5 @@
 {
-	"$schema": "./node_modules/@axium/server/schemas/config.json",
+	"$schema": "../node_modules/@axium/server/schemas/config.json",
 	"auth": {
 		"rp_id": "cloud.jamespre.dev",
 		"rp_name": "J'Cloud"
@@ -10,19 +10,6 @@
 	"origin": "https://cloud.jamespre.dev",
 	"plugins": ["@axium/storage", "@axium/notes", "@axium/tasks"],
 	"show_duplicate_state": true,
-	"storage": {
-		"cas": {
-			"enabled": true
-		},
-		"data": "/srv/axium/storage",
-		"enabled": true,
-		"limits": {
-			"item_size": 0,
-			"user_items": 0,
-			"user_size": 0
-		},
-		"trash_duration": 30
-	},
 	"web": {
 		"build": "../build/handler.js",
 		"port": 1123,
