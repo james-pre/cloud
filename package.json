@@ -4,7 +4,7 @@
 	"description": "",
 	"private": true,
 	"license": "GPL-3.0-or-later",
-	"author": "",
+	"author": "James Prevett",
 	"type": "module",
 	"main": "index.js",
 	"scripts": {
