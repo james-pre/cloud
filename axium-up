@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -euo pipefail
+
+cd /opt/cloud
+
+sudo -u axium git pull
+sudo -u axium npm clean-install
+sudo -u axium npx axium link
+sudo -u axium npx vite build
+sudo systemctl daemon-reload
+sudo systemctl restart axium
