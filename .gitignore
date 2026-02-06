@@ -5,3 +5,5 @@ build
 *.tsbuildinfo
 logs
 routes/(*)
+tmp
+
