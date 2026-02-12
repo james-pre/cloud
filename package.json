@@ -13,9 +13,9 @@
 	"dependencies": {
 		"@axium/client": "^0.13.4",
 		"@axium/core": "^0.19.5",
-		"@axium/notes": "^0.3.4",
+		"@axium/notes": "^0.3.5",
 		"@axium/server": "^0.35.2",
-		"@axium/storage": "^0.16.7",
+		"@axium/storage": "^0.17.0",
 		"@axium/tasks": "^0.4.4",
 		"semver": "^7.7.3",
 		"zod": "^4.3.5"
