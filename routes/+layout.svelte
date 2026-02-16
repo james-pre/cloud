@@ -10,13 +10,7 @@
 
 <a id="logo" href="/">J'Cloud</a>
 
-<div id="user-menu">
-	{#if data.session}
-		<UserMenu user={data.session.user} />
-	{:else}
-		<a href="/login?after={location.pathname}">Login</a>
-	{/if}
-</div>
+<UserMenu user={data.session?.user} />
 
 {@render children()}
 
@@ -27,34 +21,19 @@
 		left: 1em;
 	}
 
-	#user-menu {
-		position: fixed;
-		top: 1em;
-		right: 1em;
-		z-index: 1000;
-		border-radius: 0.5em;
-		padding: 0.5em;
-		border: 1px solid var(--border-accent);
-		cursor: pointer;
-		background-color: var(--bg-alt);
-
-		:global(div[popover]:popover-open) {
-			position: fixed;
-			right: calc(anchor(right) - 1em);
-			top: calc(anchor(bottom) + 1em);
-			position-visibility: always;
-			width: fit-content;
-			height: fit-content;
-			cursor: default;
-		}
-	}
-
 	:global {
 		body {
 			inset: 3em 0 0;
 			position: absolute;
 			margin: 0;
 			padding: 1em 0 0;
+		}
+
+		.UserMenu {
+			position: fixed;
+			top: 1em;
+			right: 1em;
+			z-index: 1000;
 		}
 
 		a {
