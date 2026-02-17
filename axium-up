@@ -8,6 +8,6 @@ sudo -u axium git pull
 sudo -u axium npm clean-install
 sudo -u axium npx axium database upgrade
 sudo -u axium npx axium link
-sudo -u axium npx vite build
+sudo -u axium npx vite build 2>&1 >/dev/null | grep -v 'The `config.kit'
 sudo systemctl daemon-reload
 sudo systemctl restart axium
