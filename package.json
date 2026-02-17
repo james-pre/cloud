@@ -12,7 +12,7 @@
 	},
 	"dependencies": {
 		"@axium/calendar": "^0.2.0",
-		"@axium/client": "^0.16.1",
+		"@axium/client": "^0.16.2",
 		"@axium/core": "^0.20.0",
 		"@axium/notes": "^0.3.7",
 		"@axium/server": "^0.36.6",
