@@ -12,13 +12,13 @@
 		"dev": "npx vite build 2>&1 >/dev/null | grep -v 'The `config.kit'; npx axium serve"
 	},
 	"dependencies": {
-		"@axium/calendar": "^0.2.0",
+		"@axium/calendar": "^0.3.0",
 		"@axium/client": "^0.16.2",
 		"@axium/core": "^0.20.0",
-		"@axium/notes": "^0.3.7",
-		"@axium/server": "^0.36.6",
-		"@axium/storage": "^0.18.4",
-		"@axium/tasks": "^0.4.5",
+		"@axium/notes": "^0.3.8",
+		"@axium/server": "^0.37.0",
+		"@axium/storage": "^0.18.5",
+		"@axium/tasks": "^0.4.6",
 		"semver": "^7.7.3",
 		"zod": "^4.3.5"
 	},
