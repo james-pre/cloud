@@ -8,7 +8,7 @@
 		"level": "debug"
 	},
 	"origin": "https://cloud.jamespre.dev",
-	"plugins": ["@axium/storage", "@axium/notes", "@axium/tasks"],
+	"plugins": ["@axium/storage", "@axium/notes", "@axium/tasks", "@axium/calendar"],
 	"show_duplicate_state": true,
 	"web": {
 		"build": "../build/handler.js",
