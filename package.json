@@ -8,7 +8,8 @@
 	"type": "module",
 	"main": "index.js",
 	"scripts": {
-		"serve": "axium serve"
+		"serve": "axium serve",
+		"dev": "npx vite build 2>&1 >/dev/null | grep -v 'The `config.kit'; npx axium serve"
 	},
 	"dependencies": {
 		"@axium/calendar": "^0.2.0",
