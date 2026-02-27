@@ -14,10 +14,10 @@
 	"dependencies": {
 		"@axium/calendar": "^0.3.0",
 		"@axium/client": "^0.16.6",
-		"@axium/core": "^0.20.0",
+		"@axium/core": "^0.20.1",
 		"@axium/notes": "^0.3.8",
-		"@axium/server": "^0.37.0",
-		"@axium/storage": "^0.18.6",
+		"@axium/server": "^0.37.1",
+		"@axium/storage": "^0.18.7",
 		"@axium/tasks": "^0.4.6",
 		"semver": "^7.7.3",
 		"zod": "^4.3.5"
