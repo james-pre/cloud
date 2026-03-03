@@ -5,6 +5,9 @@ root="$(realpath "$script_dir")"
 
 packages=("calendar" "client" "core" "notes" "server" "storage" "tasks")
 
+postinstall() {
+	npx axium link
+}
 
 sub="${1:-help}"
 
@@ -12,10 +15,12 @@ case "$sub" in
 	"local")
 		dir="${2:?Directory required}"
 		npm install ${packages[@]/#/$dir/}
+		postinstall
 		;;
 	"latest")
 		pkgs=("${packages[@]/#/@axium/}")
 		npm install "${pkgs[@]/%/@latest}"
+		postinstall
 		;;
 	"help" | *)
 		cat << EOF
