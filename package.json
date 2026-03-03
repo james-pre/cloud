@@ -16,7 +16,7 @@
 		"@axium/client": "^0.17.3",
 		"@axium/core": "^0.21.0",
 		"@axium/notes": "^0.3.8",
-		"@axium/server": "^0.38.2",
+		"@axium/server": "^0.38.3",
 		"@axium/storage": "^0.18.9",
 		"@axium/tasks": "^0.4.7",
 		"semver": "^7.7.3",
