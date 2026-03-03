@@ -14,7 +14,7 @@ sub="${1:-help}"
 case "$sub" in
 	"local")
 		dir="${2:-"../axium"}"
-		npm install ${packages[@]/#/$dir/}
+		npm install --no-save ${packages[@]/#/$dir/}
 		postinstall
 		;;
 	"latest")
