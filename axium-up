@@ -2,7 +2,9 @@
 
 set -euo pipefail
 
-cd /opt/cloud
+root="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+
+cd "$root"
 
 sudo -u axium git pull
 sudo -u axium npm clean-install

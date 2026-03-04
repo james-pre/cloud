@@ -2,8 +2,7 @@
 
 set -euo pipefail
 
-script_dir="$(dirname "${BASH_SOURCE[0]}")"
-root="$(realpath "$script_dir")"
+root="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
 packages=("calendar" "client" "core" "notes" "server" "storage" "tasks")
 
