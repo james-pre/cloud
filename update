@@ -76,7 +76,7 @@ if [[ ${#updates[@]} -eq 0 ]]; then
 fi
 
 npx tsc --noEmit -p "$root/src/tsconfig.json"
-npx vite build
+npx vite build 2>&1 >/dev/null | grep -v 'The `config.kit'; npx axium serve
 
 IFS=$'\n' sorted=($(sort <<< "${updates[*]}")); unset IFS
 printf "Updated:\n"
