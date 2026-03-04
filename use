@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 script_dir="$(dirname "${BASH_SOURCE[0]}")"
 root="$(realpath "$script_dir")"
 
