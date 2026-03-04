@@ -9,7 +9,8 @@
 	"main": "index.js",
 	"scripts": {
 		"serve": "axium serve",
-		"dev": "npx vite build 2>&1 >/dev/null | grep -v 'The `config.kit'; npx axium serve"
+		"build": "npx vite build 2>&1 >/dev/null | grep -v -e 'The `config.kit' -e 'Circular dependency:' -e 'is imported from external module \".*\" but never used in'",
+		"dev": "npm run build; npx axium serve"
 	},
 	"dependencies": {
 		"@axium/calendar": "^0.3.1",

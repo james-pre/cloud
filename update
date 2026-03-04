@@ -76,18 +76,23 @@ if [[ ${#updates[@]} -eq 0 ]]; then
 fi
 
 npx tsc --noEmit -p "$root/src/tsconfig.json"
-npx vite build 2>&1 >/dev/null | grep -v 'The `config.kit'
+npm run build
 
 IFS=$'\n' sorted=($(sort <<< "${updates[*]}")); unset IFS
-printf "Updated:\n"
-printf "%s\n" "${sorted[@]}"
+
+printf "\nUpdated:\n"
+printf "%s\n\n" "${sorted[@]}"
 
 if [[ "$commit" == true ]]; then
+	echo "--- committing ---"
 	description=$(printf "%s\n" "${sorted[@]}")
 	git commit -am "Updated axium" -m "$description"
 	git push
+	echo ""
 fi
 
 if [[ -n "$remote" ]]; then
+	echo "--- updating remote ---"
 	ssh "$remote" ./axium-up
+	echo ""
 fi
