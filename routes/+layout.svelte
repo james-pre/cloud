@@ -31,8 +31,8 @@
 
 		.UserMenu {
 			position: fixed;
-			top: 1em;
-			right: 1em;
+			top: 0.5em;
+			right: 0.5em;
 			z-index: 1000;
 		}
 
