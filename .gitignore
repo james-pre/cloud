@@ -6,4 +6,4 @@ build
 logs
 routes/(*)
 tmp
-
+!.vscode
