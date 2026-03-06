@@ -9,7 +9,7 @@
 	"main": "index.js",
 	"scripts": {
 		"serve": "axium serve",
-		"build": "npx vite build 2>&1 >/dev/null | grep -v -e 'The `config.kit' -e 'Circular dependency:' -e 'is imported from external module \".*\" but never used in'",
+		"build": "npx vite build 2>.vite_err >/dev/null; s=$?; grep -v -e 'The `config.kit' -e 'Circular dependency:' -e 'is imported from external module \".*\" but never used in' .vite_err; rm -f .vite_err; exit $s",
 		"dev": "npm run build; npx axium serve"
 	},
 	"dependencies": {
