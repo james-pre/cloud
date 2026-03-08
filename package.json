@@ -16,7 +16,7 @@
 	"dependencies": {
 		"@axium/calendar": "^0.3.1",
 		"@axium/client": "^0.19.1",
-		"@axium/core": "^0.22.0",
+		"@axium/core": "^0.22.1",
 		"@axium/notes": "^0.3.9",
 		"@axium/server": "^0.39.4",
 		"@axium/storage": "^0.20.1",
