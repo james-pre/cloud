@@ -7,7 +7,10 @@ root="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 packages=("calendar" "client" "core" "notes" "server" "storage" "tasks")
 
 postinstall() {
+	npm run clean
 	npx axium link
+	npx tsc -p "$root/src/tsconfig.json" --noEmit
+	npm run build
 }
 
 sub="${1:-help}"

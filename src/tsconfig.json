@@ -8,8 +8,9 @@
 		"resolveJsonModule": true,
 		"outDir": "../dist",
 		"rootDir": ".",
+		"noEmit": true,
 		"declaration": true,
 		"skipLibCheck": true
 	},
-	"include": ["**/*.ts"],
+	"include": ["**/*.ts"]
 }

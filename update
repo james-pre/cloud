@@ -75,9 +75,6 @@ if [[ ${#updates[@]} -eq 0 ]]; then
 	exit 0
 fi
 
-npx tsc --noEmit -p "$root/src/tsconfig.json"
-npm run build
-
 IFS=$'\n' sorted=($(sort <<< "${updates[*]}")); unset IFS
 
 printf "\nUpdated:\n"
