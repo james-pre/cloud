@@ -14,13 +14,13 @@
 		"dev": "npm run build; npx axium serve"
 	},
 	"dependencies": {
-		"@axium/calendar": "^0.3.2",
-		"@axium/client": "^0.19.2",
+		"@axium/calendar": "^0.3.4",
+		"@axium/client": "^0.19.3",
 		"@axium/core": "^0.22.2",
-		"@axium/notes": "^0.3.9",
-		"@axium/server": "^0.39.5",
-		"@axium/storage": "^0.20.2",
-		"@axium/tasks": "^0.4.8",
+		"@axium/notes": "^0.3.11",
+		"@axium/server": "^0.39.6",
+		"@axium/storage": "^0.20.3",
+		"@axium/tasks": "^0.4.10",
 		"semver": "^7.7.3",
 		"zod": "^4.3.5"
 	},
