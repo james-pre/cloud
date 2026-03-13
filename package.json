@@ -14,7 +14,7 @@
 		"dev": "npm run build; npx axium serve"
 	},
 	"dependencies": {
-		"@axium/calendar": "^0.4.0",
+		"@axium/calendar": "^0.4.1",
 		"@axium/client": "^0.19.6",
 		"@axium/core": "^0.22.2",
 		"@axium/notes": "^0.3.12",
