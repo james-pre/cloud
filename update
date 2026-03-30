@@ -90,6 +90,6 @@ fi
 
 if [[ -n "$remote" ]]; then
 	echo "--- updating remote ---"
-	ssh "$remote" ./axium-up
+	ssh -t "$remote" ./axium-up
 	echo ""
 fi
