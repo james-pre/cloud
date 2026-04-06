@@ -45,7 +45,8 @@
 	},
 	"axium": {
 		"server": {
-			"hooks": "./src/common.ts"
+			"hooks": "./src/common.ts",
+			"web_client_hooks": "./src/client.ts"
 		}
 	}
 }

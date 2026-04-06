@@ -1,0 +1,12 @@
+{
+	"preference": {
+		"theme": "Theme"
+	},
+	"themes": {
+		"default": "Default",
+		"light": "Light",
+		"forest": "Forest",
+		"midnight": "Midnight",
+		"beach": "Beach"
+	}
+}
