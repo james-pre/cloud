@@ -10,7 +10,7 @@ postinstall() {
 	npm run clean
 	npx axium link
 	npx tsc -p "$root/src/tsconfig.json" --noEmit
-	npm run build
+	npx axium build
 }
 
 sub="${1:-help}"
