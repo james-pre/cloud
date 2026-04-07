@@ -6,19 +6,60 @@ root="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
 packages=("calendar" "client" "contacts" "core" "notes" "server" "storage" "tasks")
 
+build=true
+args=()
+
+for arg in "$@"; do
+	case "$arg" in
+		"--build")
+			build=true
+			;;
+		"--no-build")
+			build=false
+			;;
+		*)
+			args+=("$arg")
+			;;
+	esac
+done
+
 postinstall() {
 	npm run clean
 	npx axium link
 	npx tsc -p "$root/src/tsconfig.json" --noEmit
-	npx axium build
+	if [ "$build" = true ]; then
+		npx axium build
+	fi
 }
 
-sub="${1:-help}"
+sub="${args[0]:-help}"
 
 case "$sub" in
 	"local")
-		dir="${2:-"../axium"}"
-		npm install --no-save ${packages[@]/#/$dir/}
+		dir="../axium"
+		install_mode="--no-save"
+
+		for arg in "${args[@]:1}"; do
+			case "$arg" in
+				"--save")
+					install_mode=""
+					;;
+				--*)
+					echo "Unknown option for local: $arg" >&2
+					exit 1
+					;;
+				*)
+					dir="$arg"
+					;;
+			esac
+		done
+
+		pkgs=("${packages[@]/#/$dir/}")
+		if [ -n "$install_mode" ]; then
+			npm install "$install_mode" "${pkgs[@]}"
+		else
+			npm install "${pkgs[@]}"
+		fi
 		postinstall
 		;;
 	"latest")
@@ -28,12 +69,15 @@ case "$sub" in
 		;;
 	"help" | *)
 		cat << EOF
-Usage: $0 <command>
+Usage: $0 [options] <command>
+
+Options:
+	--[no-]build   Whether to run a build after installing
 
 Commands:
-    local [directory]  Install Axium packages from a local directory. Defaults to ../axium
-    latest             Install the latest versions of Axium packages
-    help               Show this help message
+	local [directory] [--save]  Install Axium packages from a local directory. Defaults to ../axium.
+    latest                      Install the latest versions of Axium packages
+    help                        Show this help message
 EOF
 		if [ "$sub" != "help" ]; then
 			exit 1
