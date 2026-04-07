@@ -1,5 +1,5 @@
-import { themeStyles } from '$src/client';
-import '$src/common.js';
+import { themeStyles } from '../src/client.js';
+import '../src/common.js';
 import { getCurrentSession } from '@axium/client/user';
 import type { Session, User } from '@axium/core';
 
