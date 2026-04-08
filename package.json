@@ -17,7 +17,7 @@
 		"@axium/calendar": "^0.4.6",
 		"@axium/client": "^0.23.5",
 		"@axium/contacts": "^0.2.4",
-		"@axium/core": "^0.27.4",
+		"@axium/core": "^0.27.3",
 		"@axium/notes": "^0.4.0",
 		"@axium/server": "^0.44.1",
 		"@axium/storage": "^0.21.5",
