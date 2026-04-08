@@ -19,7 +19,7 @@
 		"@axium/contacts": "^0.2.4",
 		"@axium/core": "^0.28.0",
 		"@axium/notes": "^0.4.0",
-		"@axium/server": "^0.44.2",
+		"@axium/server": "^0.44.3",
 		"@axium/storage": "^0.21.5",
 		"@axium/tasks": "^0.4.14",
 		"semver": "^7.7.3",
