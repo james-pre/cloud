@@ -10,6 +10,6 @@ sudo -u axium git pull
 sudo -u axium npm clean-install
 sudo -u axium npx axium database upgrade
 sudo -u axium npx axium link
-sudo -u axium npm run build
+sudo -u axium npx axium build
 sudo systemctl daemon-reload
 sudo systemctl restart axium
