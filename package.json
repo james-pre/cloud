@@ -11,7 +11,7 @@
 		"serve": "axium serve",
 		"clean": "rm -rf build",
 		"build": "axium build",
-		"dev": "axium build; npx axium serve"
+		"dev": "axium dev"
 	},
 	"dependencies": {
 		"@axium/calendar": "^0.4.6",
