@@ -34,4 +34,15 @@ export const themeStyles: Record<Theme, string> = Object.assign(Object.create(nu
 	--bg-light: 60%;
 	--light-step: -4%;
 	`,
+	cherry: `
+	--hue: 330;
+	--fg-light: 80%;
+	--bg-light: 20%;
+	`,
+	volcano: `
+	--hue: 10;
+	--fg-light: 80%;
+	--bg-light: 10%;
+	--light-step: 5%;
+	`,
 });

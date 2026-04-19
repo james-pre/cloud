@@ -2,7 +2,7 @@ import { addPreference } from '@axium/core';
 import { zKeys } from '@axium/core/locales';
 import * as z from 'zod';
 
-const themes = ['default', 'light', 'forest', 'midnight', 'beach'] as const;
+const themes = ['default', 'light', 'forest', 'midnight', 'beach', 'cherry', 'volcano'] as const;
 
 export type Theme = (typeof themes)[number];
 
