@@ -4,16 +4,11 @@ set -euo pipefail
 
 root="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
-commit=false
 remote=""
 
 while [[ $# -gt 0 ]]; do
 	case "$1" in
-		-c | --commit)
-			commit=true
-			shift
-			;;
-		-R | --remote)
+		-r | --remote)
 			remote="$2"
 			shift 2
 			;;
@@ -24,8 +19,7 @@ while [[ $# -gt 0 ]]; do
 				Update Axium packages, verify the build, and optionally commit and deploy.
 
 				Options:
-				    -c, --commit        Commit and push the update
-				    -R, --remote <id>   Deploy on a remote host via ssh <id> ./axium-up
+				    -r, --remote <id>   Deploy on a remote host via ssh <id> ./axium-up
 				    -h, --help          Show this help message
 			EOF
 			exit 0
@@ -39,54 +33,9 @@ done
 
 cd "$root"
 
-get_versions() {
-	local -n _versions=$1
-	for pkg in $(jq -r '.dependencies | to_entries[] | select(.key | startswith("@axium/")) | "\(.key)=\(.value)"' package.json); do
-		local name="${pkg%%=*}"
-		local version="${pkg#*=}"
-		_versions["$name"]="${version#^}"
-	done
-}
-
-if [[ -n "$(git status --porcelain)" ]]; then
-	echo "Error: Working directory is not clean. Commit or stash changes first." >&2
-	exit 1
-fi
-
-declare -A old_versions
-get_versions old_versions
-
-"$root/use" latest
-
-declare -A new_versions
-get_versions new_versions
-
-updates=()
-for name in "${!new_versions[@]}"; do
-	old="${old_versions[$name]:-}"
-	new="${new_versions[$name]}"
-	if [[ "$old" != "$new" ]]; then
-		updates+=("$name $old->$new")
-	fi
-done
-
-if [[ ${#updates[@]} -eq 0 ]]; then
-	echo "No packages were updated."
-	exit 0
-fi
-
-IFS=$'\n' sorted=($(sort <<< "${updates[*]}")); unset IFS
-
-printf "\nUpdated:\n"
-printf "%s\n\n" "${sorted[@]}"
-
-if [[ "$commit" == true ]]; then
-	echo "--- committing ---"
-	description=$(printf "%s\n" "${sorted[@]}")
-	git commit -am "Updated axium" -m "$description"
-	git push
-	echo ""
-fi
+npm install
+npx axium upgrade --git --allow-breaking
+git push
 
 if [[ -n "$remote" ]]; then
 	echo "--- updating remote ---"
