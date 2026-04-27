@@ -2,43 +2,14 @@
 
 set -euo pipefail
 
-root="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
-
-remote=""
-
-while [[ $# -gt 0 ]]; do
-	case "$1" in
-		-r | --remote)
-			remote="$2"
-			shift 2
-			;;
-		-h | --help)
-			cat <<- EOF
-				Usage: $0 [options]
-
-				Update Axium packages, verify the build, and optionally commit and deploy.
-
-				Options:
-				    -r, --remote <id>   Deploy on a remote host via ssh <id> ./axium-up
-				    -h, --help          Show this help message
-			EOF
-			exit 0
-			;;
-		*)
-			echo "Unknown option: $1" >&2
-			exit 1
-			;;
-	esac
-done
-
-cd "$root"
+cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
 npm install
 npx axium upgrade --git --allow-breaking
 git push
 
-if [[ -n "$remote" ]]; then
+if [[ -n "$1" ]]; then
 	echo "--- updating remote ---"
-	ssh -t "$remote" ./axium-up
+	ssh -t "$1" ./axium-up
 	echo ""
 fi
