@@ -4,8 +4,8 @@ set -euo pipefail
 
 cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
-sudo -u axium git pull
-sudo -u axium npm clean-install
+sudo -u axium git pull --quiet
+sudo -u axium npm clean-install --silent
 sudo -u axium npx axium database upgrade
 sudo -u axium npx axium link
 sudo -u axium npx axium build
