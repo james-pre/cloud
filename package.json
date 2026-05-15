@@ -15,13 +15,13 @@
 	},
 	"dependencies": {
 		"@axium/calendar": "^0.4.6",
-		"@axium/client": "^0.26.3",
-		"@axium/contacts": "^0.2.9",
+		"@axium/client": "^0.27.0",
+		"@axium/contacts": "^0.2.10",
 		"@axium/core": "^0.31.1",
 		"@axium/notes": "^0.4.1",
-		"@axium/server": "^0.46.3",
-		"@axium/storage": "^0.25.0",
-		"@axium/tasks": "^0.4.14",
+		"@axium/server": "^0.46.4",
+		"@axium/storage": "^0.25.1",
+		"@axium/tasks": "^0.5.0",
 		"semver": "^7.7.3",
 		"svelte": "^5.55.1",
 		"zod": "^4.3.5"
