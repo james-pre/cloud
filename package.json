@@ -20,7 +20,7 @@
 		"@axium/core": "^0.32.0",
 		"@axium/notes": "^0.4.3",
 		"@axium/server": "^0.47.0",
-		"@axium/storage": "^0.26.0",
+		"@axium/storage": "^0.26.1",
 		"@axium/tasks": "^0.5.2",
 		"semver": "^7.7.3",
 		"svelte": "^5.55.1",
