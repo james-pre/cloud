@@ -2,14 +2,39 @@
 
 set -euo pipefail
 
-cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+root="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+cd "$root"
+
+dev=false
+dev_dir=""
+remote=""
+
+for arg in "$@"; do
+	case "$arg" in
+		"--dev" | "-d")
+			dev=true
+			;;
+		--dev=* | -d=*)
+			dev=true
+			dev_dir="${arg#*=}"
+			;;
+		*)
+			remote="$arg"
+			;;
+	esac
+done
 
 npm install --silent
 npx axium upgrade --git --allow-breaking
 git push --quiet
 
-if [[ -n "$1" ]]; then
+if [[ -n "$remote" ]]; then
 	echo "--- updating remote ---"
-	ssh -t "$1" ./axium-up
+	ssh -t "$remote" ./axium-up
 	echo ""
+fi
+
+if [ "$dev" = true ]; then
+	echo "--- dev ---"
+	"$root/use" local --no-build ${dev_dir:+"$dev_dir"}
 fi
