@@ -21,7 +21,7 @@
 		"@axium/notes": "^0.4.3",
 		"@axium/server": "^0.49.0",
 		"@axium/storage": "^0.30.1",
-		"@axium/sysadmin": "^0.2.0",
+		"@axium/sysadmin": "^0.2.1",
 		"@axium/tasks": "^0.5.3",
 		"semver": "^7.7.3",
 		"svelte": "^5.55.1",
