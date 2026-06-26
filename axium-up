@@ -15,7 +15,7 @@ sudo systemctl restart axium
 
 # Client update; failures here should not abort the script.
 {
-	sudo npm update --global
+	sudo npm update --global --silent
 	systemctl --user daemon-reload
 	systemctl --user restart axium-client
 } || echo "Warning: client update failed" >&2
