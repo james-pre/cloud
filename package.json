@@ -18,7 +18,7 @@
 		"@axium/client": "^0.33.3",
 		"@axium/contacts": "^0.3.2",
 		"@axium/core": "^0.36.1",
-		"@axium/email": "^0.1.0",
+		"@axium/email": "^0.1.1",
 		"@axium/notes": "^0.4.3",
 		"@axium/server": "^0.51.1",
 		"@axium/storage": "^0.30.3",
