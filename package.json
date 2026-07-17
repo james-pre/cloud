@@ -14,16 +14,16 @@
 		"dev": "axium dev"
 	},
 	"dependencies": {
-		"@axium/calendar": "^0.5.1",
-		"@axium/client": "^0.33.5",
+		"@axium/calendar": "^0.5.3",
+		"@axium/client": "^0.34.0",
 		"@axium/contacts": "^0.3.2",
 		"@axium/core": "^0.36.2",
 		"@axium/email": "^0.1.2",
 		"@axium/notes": "^0.4.3",
-		"@axium/server": "^0.51.1",
+		"@axium/server": "^0.52.0",
 		"@axium/storage": "^0.30.4",
 		"@axium/sysadmin": "^0.2.4",
-		"@axium/tasks": "^0.5.3",
+		"@axium/tasks": "^0.5.4",
 		"semver": "^7.7.3",
 		"svelte": "^5.55.1",
 		"zod": "^4.3.5"
