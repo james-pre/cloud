@@ -6,10 +6,10 @@ cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 
 sudo -u axium git pull --quiet
 sudo -u axium npm clean-install --silent
-sudo -u axium npx axium database init --tables-only
-sudo -u axium npx axium database upgrade
-sudo -u axium npx axium link
-sudo -u axium npx axium build
+sudo -u axium axium database init --tables-only
+sudo -u axium axium database upgrade
+sudo -u axium axium link
+sudo -u axium axium build
 sudo systemctl daemon-reload
 sudo systemctl restart axium
 
