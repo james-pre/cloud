@@ -15,9 +15,9 @@
 	},
 	"dependencies": {
 		"@axium/calendar": "^0.5.1",
-		"@axium/client": "^0.33.4",
+		"@axium/client": "^0.33.5",
 		"@axium/contacts": "^0.3.2",
-		"@axium/core": "^0.36.1",
+		"@axium/core": "^0.36.2",
 		"@axium/email": "^0.1.2",
 		"@axium/notes": "^0.4.3",
 		"@axium/server": "^0.51.1",
