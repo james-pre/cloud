@@ -40,28 +40,8 @@
 			text-decoration: none;
 		}
 
-		.header {
-			position: absolute;
-			inset: 0 0 10em;
-			padding: 1em 2em;
-		}
-
-		.content {
-			position: absolute;
-			inset: 10em 10em 0;
-			display: flex;
-			flex-direction: column;
-			gap: 1em;
-		}
-
 		textarea {
 			border-radius: 0.5em;
-		}
-
-		textarea.big-input {
-			resize: none;
-			width: 50em;
-			height: 15em;
 		}
 	}
 </style>
