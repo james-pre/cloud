@@ -7,8 +7,8 @@ root="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 packages=("calendar" "client" "contacts" "core" "notes" "server" "storage" "tasks" "sysadmin" "email")
 
 build=true
-foreground_scripts=false
 args=()
+npm_install_opts=()
 
 for arg in "$@"; do
 	case "$arg" in
@@ -19,18 +19,13 @@ for arg in "$@"; do
 			build=false
 			;;
 		"--foreground-scripts" | "-f")
-			foreground_scripts=true
+			npm_install_opts+=("--foreground-scripts")
 			;;
 		*)
 			args+=("$arg")
 			;;
 	esac
 done
-
-npm_install_opts=()
-if [ "$foreground_scripts" = true ]; then
-	npm_install_opts+=("--foreground-scripts")
-fi
 
 postinstall() {
 	npm run clean
