@@ -7,6 +7,7 @@ root="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
 packages=("calendar" "client" "contacts" "core" "notes" "server" "storage" "tasks" "sysadmin" "email")
 
 build=true
+foreground_scripts=false
 args=()
 
 for arg in "$@"; do
@@ -14,14 +15,22 @@ for arg in "$@"; do
 		"--build")
 			build=true
 			;;
-		"--no-build")
+		"--no-build" | "-b")
 			build=false
+			;;
+		"--foreground-scripts" | "-f")
+			foreground_scripts=true
 			;;
 		*)
 			args+=("$arg")
 			;;
 	esac
 done
+
+npm_install_opts=()
+if [ "$foreground_scripts" = true ]; then
+	npm_install_opts+=("--foreground-scripts")
+fi
 
 postinstall() {
 	npm run clean
@@ -56,15 +65,15 @@ case "$sub" in
 
 		pkgs=("${packages[@]/#/$dir/}")
 		if [ -n "$install_mode" ]; then
-			npm install "$install_mode" "${pkgs[@]}"
+			npm install "${npm_install_opts[@]}" "$install_mode" "${pkgs[@]}"
 		else
-			npm install "${pkgs[@]}"
+			npm install "${npm_install_opts[@]}" "${pkgs[@]}"
 		fi
 		postinstall
 		;;
 	"latest")
 		pkgs=("${packages[@]/#/@axium/}")
-		npm install "${pkgs[@]/%/@latest}"
+		npm install "${npm_install_opts[@]}" "${pkgs[@]/%/@latest}"
 		postinstall
 		;;
 	"help" | *)
@@ -72,10 +81,11 @@ case "$sub" in
 Usage: $0 [options] <command>
 
 Options:
-	--[no-]build   Whether to run a build after installing
+    --[no-]build, -b          Whether to run a build after installing (-b disables it)
+    --foreground-scripts, -f  Run npm install scripts in the foreground
 
 Commands:
-	local [directory] [--save]  Install Axium packages from a local directory. Defaults to ../axium/packages.
+    local [directory] [--save]  Install Axium packages from a local directory. Defaults to ../axium/packages.
     latest                      Install the latest versions of Axium packages
     help                        Show this help message
 EOF
