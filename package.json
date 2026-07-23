@@ -57,11 +57,9 @@
 	},
 	"allowScripts": {
 		"file:../axium/packages/server": true,
+		"@axium/core": true,
 		"@axium/server": true,
 		"sharp": true,
 		"esbuild": true
-	},
-	"patchedDependencies": {
-		"@sveltejs/kit@2.56.1": "node_modules/@axium/server/patches/@sveltejs/kit@2.56.1.patch"
 	}
 }
