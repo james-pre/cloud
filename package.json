@@ -57,6 +57,7 @@
 	},
 	"allowScripts": {
 		"file:../axium/packages/server": true,
+		"file:../axium/packages/core": true,
 		"@axium/core": true,
 		"@axium/server": true,
 		"sharp": true,
