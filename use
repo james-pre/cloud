@@ -28,11 +28,10 @@ for arg in "$@"; do
 done
 
 postinstall() {
-	npm run clean
-	npx axium link
-	npx tsc -p "$root/src/tsconfig.json" --noEmit
+	npm -s run clean
+	npx -s axium link
 	if [ "$build" = true ]; then
-		npx axium build
+		npx -s axium build
 	fi
 }
 

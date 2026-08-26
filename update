@@ -24,8 +24,8 @@ for arg in "$@"; do
 	esac
 done
 
-npm install --silent
-npx axium upgrade --git --allow-breaking
+npm -s install
+npx -s axium upgrade --git --allow-breaking
 git push --quiet
 
 if [[ -n "$remote" ]]; then
