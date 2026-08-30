@@ -36,7 +36,6 @@
 		"typescript": "^6.0.2"
 	},
 	"overrides": {
-		"@sveltejs/kit": "2.56.1",
 		"vite": "^8.0.5"
 	},
 	"prettier": {
