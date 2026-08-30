@@ -47,10 +47,7 @@
 		"arrowParens": "avoid"
 	},
 	"axium": {
-		"server": {
-			"hooks": "./src/common.ts",
-			"web_client_hooks": "./src/client.ts"
-		}
+		"server": {}
 	},
 	"allowScripts": {
 		"file:../axium/packages/server": true,

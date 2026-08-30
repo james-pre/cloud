@@ -1,16 +1,15 @@
 <script lang="ts">
-	import { UserMenu } from '@axium/client/components';
+	import { UserMenu, PWAIndicator } from '@axium/client/components';
 
 	const { children, data } = $props();
 </script>
 
-{#if data.theme}
-	{@html `<style>:root{${data.theme}}</style>`}
-{/if}
-
 <a id="logo" href="/">J'Cloud</a>
 
-<UserMenu user={data.session?.user} />
+<div id="top-corner">
+	<PWAIndicator />
+	<UserMenu user={data.session?.user} />
+</div>
 
 {@render children()}
 
@@ -29,11 +28,14 @@
 			padding: 1em 0 0;
 		}
 
-		.UserMenu {
+		#top-corner {
 			position: fixed;
 			top: 0.5em;
 			right: 0.5em;
 			z-index: 1000;
+			display: inline-flex;
+			gap: 1em;
+			align-items: center;
 		}
 
 		a {
