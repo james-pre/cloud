@@ -26,7 +26,7 @@
 		"@axium/sysadmin": "^0.3.2",
 		"@axium/tasks": "^0.5.8",
 		"semver": "^7.7.3",
-		"svelte": "^5.55.1",
+		"svelte": "^5.57.1",
 		"zod": "^4.3.5"
 	},
 	"devDependencies": {
