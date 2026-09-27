@@ -39,7 +39,7 @@
 		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 		gap: 1em;
 		position: fixed;
-		inset: 3em min(10em, 20%) 1em;
+		inset: calc(var(--top-bar-height) + 1em) min(10em, 20%) 1em;
 	}
 
 	.box {
@@ -51,7 +51,7 @@
 
 	@media (width < 700px) {
 		#boxes {
-			inset: 5em 1em 1em;
+			inset: calc(var(--top-bar-height) + 1em) 1em 1em;
 			display: flex;
 			flex-direction: column;
 			gap: 1em;

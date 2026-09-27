@@ -1,12 +1,12 @@
 {
 	"$schema": "../node_modules/@axium/server/schemas/config.json",
 	"auth": {
-		"rp_id": "cloud.jamespre.dev",
-		"rp_name": "J'Cloud"
+		"rp_id": "cloud.jamespre.dev"
 	},
 	"log": {
 		"level": "debug"
 	},
+	"name": "J'Cloud",
 	"origin": "https://cloud.jamespre.dev",
 	"plugins": ["@axium/storage", "@axium/notes", "@axium/tasks", "@axium/calendar", "@axium/contacts"],
 	"show_duplicate_state": true,
