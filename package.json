@@ -21,7 +21,7 @@
 		"@axium/email": "^0.1.7",
 		"@axium/kino": "^0.2.5",
 		"@axium/notes": "^0.4.7",
-		"@axium/server": "^0.57.5",
+		"@axium/server": "^0.57.6",
 		"@axium/storage": "^0.32.12",
 		"@axium/sysadmin": "^0.3.4",
 		"@axium/tasks": "^0.5.10",
