@@ -30,7 +30,7 @@
 		"zod": "^4.3.5"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-node": "^5.4.0",
+		"@sveltejs/adapter-node": "^6.0.0",
 		"prettier": "^3.7.4",
 		"prettier-plugin-svelte": "^4.1.0",
 		"typescript": "^6.0.2"
@@ -50,10 +50,8 @@
 		"server": {}
 	},
 	"allowScripts": {
-		"file:../axium/packages/server": true,
 		"file:../axium/packages/core": true,
 		"@axium/core": true,
-		"@axium/server": true,
 		"sharp": true,
 		"esbuild": true
 	}
