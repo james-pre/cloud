@@ -19,7 +19,7 @@
 		"@axium/contacts": "^0.3.7",
 		"@axium/core": "^0.44.1",
 		"@axium/email": "^0.1.9",
-		"@axium/kino": "^0.4.0",
+		"@axium/kino": "^0.4.1",
 		"@axium/notes": "^0.4.10",
 		"@axium/server": "^0.59.2",
 		"@axium/storage": "^0.33.5",
